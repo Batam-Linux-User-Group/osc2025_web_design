@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Diff Split Preview - Side by Side in One Box</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="content-box">
+        <select id="challengeSelect" class="challenge-select"></select>
+        <div class="row-preview">
+          <!-- Slide compare preview -->
+          <div class="split-panel">
+            <div class="preview-toolbar">
+              <div class="card-title">Code Output</div>
+              <label>
+                <input type="checkbox" id="diffMode" />
+                Diff
+              </label>
+            </div>
+
+            <div class="diff-preview" id="diffPreview">
+              <!-- Output user iframe -->
+              <div
+                class="diff-half diff-half-code"
+                id="userHalf"
+                style="clip-path: inset(0 0 0 0)"
+              >
+                <iframe
+                  id="outputFrame"
+                  style="
+                    width: 400px;
+                    height: 300px;
+                    border: none;
+                    pointer-events: none;
+                    background: #fff;
+                  "
+                  sandbox="allow-same-origin"
+                ></iframe>
+              </div>
+              <div
+                class="diff-half diff-half-target"
+                id="targetHalf"
+                style="clip-path: inset(0 400px 0 0)"
+              >
+                <img
+                  id="targetImg"
+                  class="diff-img-target"
+                  src=""
+                  alt="Target"
+                />
+              </div>
+              <img id="diffInvertImg" class="diff-invert" src="" alt="Diff Overlay" style="display: none;" />
+              <div class="diff-line" id="diffLine" style="left: 400px"></div>
+              <div
+                class="diff-indicator"
+                id="diffIndicator"
+                style="left: 400px"
+              >
+                400
+              </div>
+            </div>
+          </div>
+          <!-- Target design -->
+          <div class="split-panel">
+            <div class="card-title">Target Design (400x300px)</div>
+            <img
+              id="imgOnly"
+              src=""
+              alt="Target"
+              class="target-img"
+              style="margin-bottom: 4px"
+            />
+            <div class="color-label">Colors</div>
+            <div class="hex-codes" id="hexCodes"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
