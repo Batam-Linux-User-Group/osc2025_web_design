@@ -192,10 +192,10 @@ diffModeCheckbox.addEventListener("change", () => {
 // LOAD CHALLENGE
 function loadChallenge(idx) {
   const chal = challenges[idx];
-  const imgSrc = "../assets/" + chal.file;
+  const imgSrc = "./assets/" + chal.file;
   targetImg.src = imgSrc;
   imgOnly.src = imgSrc;
-  outputFrame.src = "../challenges/" + chal.editor;
+  outputFrame.src = "./challenges/" + chal.editor;
   diffInvertImg.src = imgSrc; // update src overlay diff
   hexCodesDiv.innerHTML = "";
   chal.colors.forEach((hex) => {
